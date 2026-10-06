@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Профиль — z-index</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav">
+        <strong>Личный кабинет</strong><span>Мой профиль</span>
+      </div>
+    </header>
+    <main class="content" id="content">
+      <div class="container">
+        <div class="heading">
+          <h1>Мой профиль</h1>
+          <button class="btn primary" id="open">Редактировать</button>
+        </div>
+        <dl>
+          <div>
+            <dt>Имя</dt>
+            <dd id="savedName">Александр</dd>
+          </div>
+          <div>
+            <dt>Фамилия</dt>
+            <dd id="savedLastName">Иванов</dd>
+          </div>
+          <div>
+            <dt>Отчество</dt>
+            <dd id="savedMiddleName">Сергеевич</dd>
+          </div>
+          <div>
+            <dt>Телефон</dt>
+            <dd id="savedPhone">+7 (999) 123-45-67</dd>
+          </div>
+          <div>
+            <dt>Электронная почта</dt>
+            <dd id="savedEmail">alex@example.com</dd>
+          </div>
+          <div>
+            <dt>О себе</dt>
+            <dd id="savedAbout">
+              Веб-разработчик. Создаю удобные интерфейсы и изучаю современные
+              технологии.
+            </dd>
+          </div>
+          <div>
+            <dt>Статус</dt>
+            <dd class="status">Активен</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="modal" id="modal" hidden>
+        <section
+          class="dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="title"
+        >
+          <div class="modal-header">
+            <h2 id="title">Редактировать профиль</h2>
+            <button
+              type="button"
+              class="close"
+              aria-label="Закрыть"
+              title="Закрыть"
+            >
+              ×
+            </button>
+          </div>
+          <form id="form">
+            <div class="modal-body">
+              <label for="name">Имя</label
+              ><input
+                id="name"
+                name="name"
+                value="Александр"
+                autocomplete="given-name"
+                required
+              />
+              <label for="lastName">Фамилия</label
+              ><input
+                id="lastName"
+                name="lastName"
+                value="Иванов"
+                autocomplete="family-name"
+                required
+              />
+              <label for="middleName">Отчество</label
+              ><input
+                id="middleName"
+                name="middleName"
+                value="Сергеевич"
+                autocomplete="additional-name"
+              />
+              <label for="phone">Телефон</label
+              ><input
+                id="phone"
+                name="phone"
+                type="tel"
+                value="+7 (999) 123-45-67"
+                autocomplete="tel"
+                required
+              />
+              <label for="email">Электронная почта</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                value="alex@example.com"
+                autocomplete="email"
+                required
+              />
+              <label for="about">О себе</label
+              ><textarea id="about" name="about" rows="3">
+Веб-разработчик. Создаю удобные интерфейсы и изучаю современные технологии.</textarea
+              >
+            </div>
+            <div class="controls" hidden>
+              <label class="switch"
+                ><input type="checkbox" id="fix" /><span
+                  >Вынести модалку в body</span
+                ></label
+              ><output id="state" aria-live="polite"
+                >main → .modal · z-index: 999999</output
+              >
+            </div>
+            <div class="modal-footer">
+              <button class="btn" type="button" id="cancel">Отмена</button
+              ><button class="btn primary" type="submit">Сохранить</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <p class="toast" id="toast" role="status" hidden>Изменения сохранены</p>
+  </body>
+</html>
