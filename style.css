@@ -26,12 +26,31 @@ button {
 [hidden] {
   display: none !important;
 }
+
 .header {
   position: relative;
   z-index: 10;
   background: #212529;
   color: white;
 }
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  background: #0008;
+  overflow-y: auto;
+}
+
 .nav {
   max-width: 960px;
   min-height: 80px;
@@ -50,10 +69,7 @@ button {
   font-size: 14px;
 }
 /* The modal cannot escape this parent's stacking context. */
-.content {
-  position: relative;
-  z-index: 1;
-}
+
 .container {
   max-width: 960px;
   margin: auto;
@@ -111,17 +127,7 @@ dd {
 .primary:hover {
   background: #0b5ed7;
 }
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 40px 16px;
-  background: #0008;
-  overflow-y: auto;
-}
+
 .dialog {
   width: min(480px, 100%);
   margin: 0 auto;
